@@ -1,2 +1,3 @@
 module QtWidgets
 plugin declarativewidgets
+typeinfo qtwidgets.qmltypes

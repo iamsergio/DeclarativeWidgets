@@ -81,6 +81,13 @@ if(NOT ${CMAKE_CURRENT_SOURCE_DIR} STREQUAL "${PLUGIN_DESTDIR}/QtWidgets")
     COMMENT "Copy qmldir to build directory"
     COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/qmldir
             ${PLUGIN_DESTDIR}/QtWidgets/qmldir)
+  add_custom_command(
+    TARGET ${TARGET}
+    POST_BUILD
+    COMMAND
+      ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/qtwidgets.qmltypes
+      ${PLUGIN_DESTDIR}/QtWidgets/qtwidgets.qmltypes)
+
 endif()
 
 install(TARGETS ${TARGET}
