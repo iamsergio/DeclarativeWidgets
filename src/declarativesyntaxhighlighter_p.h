@@ -37,10 +37,13 @@
 class DeclarativeSyntaxHighlighter : public QSyntaxHighlighter
 {
     Q_OBJECT
-
+    Q_PROPERTY(QTextDocument* document READ document WRITE setDocument NOTIFY documentChanged)
 public:
     explicit DeclarativeSyntaxHighlighter(QObject *parent = nullptr);
     explicit DeclarativeSyntaxHighlighter(QTextDocument *document);
+
+    QTextDocument* document() const;
+    void setDocument(QTextDocument* document);
 
     void highlightBlock(const QString &text) override;
 
@@ -48,6 +51,7 @@ public:
 
 Q_SIGNALS:
     void highlightRequested(const QString &text);
+    void documentChanged();
 };
 
 #endif

@@ -45,3 +45,16 @@ void DeclarativeSyntaxHighlighter::setFormat(int start, int count, QColor color)
 {
     QSyntaxHighlighter::setFormat(start, count, color);
 }
+
+QTextDocument* DeclarativeSyntaxHighlighter::document() const
+{
+    return QSyntaxHighlighter::document();
+}
+
+void DeclarativeSyntaxHighlighter::setDocument(QTextDocument* document)
+{
+    if (document != this->document()) {
+        QSyntaxHighlighter::setDocument(document);
+        emit documentChanged();
+    }
+}
