@@ -70,6 +70,7 @@
 #include "scrollareawidgetcontainer_p.h"
 #include "stackedwidgetwidgetcontainer_p.h"
 #include "toolbarwidgetcontainer_p.h"
+#include "declarativesyntaxhighlighter_p.h"
 
 #include <QAbstractItemDelegate>
 #include <QAbstractItemModel>
@@ -159,6 +160,7 @@ void ExtensionpluginPlugin::registerTypes(const char *uri)
   qmlRegisterExtendedType<DeclarativeSeparator, DeclarativeObjectExtension>(uri, 1, 0, "Separator");
   qmlRegisterType<DeclarativeTabStops>("QtWidgets", 1, 0, "TabStops");
   qmlRegisterType<DeclarativePixmap>(uri, 1, 0, "Pixmap");
+  qmlRegisterType<DeclarativeSyntaxHighlighter>(uri, 1, 0, "SyntaxHighlighter");
 
   // layouts
   qmlRegisterExtendedType<DeclarativeFormLayout, DeclarativeFormLayoutExtension>(uri, 1, 0, "FormLayout");

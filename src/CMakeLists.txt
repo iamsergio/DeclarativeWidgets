@@ -55,7 +55,8 @@ add_library(
   stackedwidgetwidgetcontainer.cpp
   staticdialogmethodattached.cpp
   toolbarwidgetcontainer.cpp
-  declarativesizepolicy.cpp)
+  declarativesizepolicy.cpp
+  declarativesyntaxhighlighter.cpp)
 
 target_link_libraries(
   ${TARGET}
