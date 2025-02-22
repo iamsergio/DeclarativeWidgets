@@ -6,7 +6,7 @@
 set(TARGET declarativewidgets)
 
 add_library(
-  ${TARGET} MODULE
+  ${TARGET}
   abstractdeclarativeobject.cpp
   declarativeaction.cpp
   declarativeactionitem.cpp
