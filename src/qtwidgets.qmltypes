@@ -14,7 +14,6 @@ Module {
         defaultProperty: "data"
         prototype: "QObject"
         exports: ["QmlContext 1.0"]
-
         Property { name: "data"; type: "QObject"; isList: true; isReadonly: true }
     }
     Component {
@@ -286,7 +285,6 @@ Module {
         name: "DeclarativeIcon"
         prototype: "QObject"
         exports: ["Icon 1.0"]
-
         attachedType: "DeclarativeIconAttached"
         Property { name: "icon"; type: "QIcon" }
         Property { name: "name"; type: "string"; isReadonly: true }
@@ -447,7 +445,6 @@ Module {
         prototype: "QObject"
         exports: ["LayoutContentMargins 1.0"]
         isCreatable: false
-
         Property { name: "left"; type: "int" }
         Property { name: "top"; type: "int" }
         Property { name: "right"; type: "int" }
@@ -576,7 +573,6 @@ Module {
         name: "DeclarativePixmap"
         prototype: "QObject"
         exports: ["Pixmap 1.0"]
-
         attachedType: "DeclarativePixmapAttached"
         Property { name: "Pixmap"; type: "QPixmap" }
         Property { name: "width"; type: "int"; isReadonly: true }
@@ -612,7 +608,6 @@ Module {
         name: "DeclarativeQmlContextProperty"
         prototype: "QObject"
         exports: ["QmlContextProperty 1.0"]
-
         Property { name: "name"; type: "string" }
         Property { name: "value"; type: "QVariant" }
         Signal {
@@ -637,7 +632,6 @@ Module {
         prototype: "QObject"
         exports: ["SizePolicy 1.0"]
         isCreatable: false
-
         Enum {
             name: "Policy"
             values: {
@@ -772,7 +766,6 @@ Module {
         name: "DeclarativeSpacerItem"
         prototype: "QObject"
         exports: ["Spacer 1.0"]
-
         Enum {
             name: "SizePolicy"
             values: {
@@ -846,10 +839,25 @@ Module {
         Property { name: "stretch"; type: "int" }
     }
     Component {
+        name: "DeclarativeSyntaxHighlighter"
+        prototype: "QSyntaxHighlighter"
+        exports: ["SyntaxHighlighter 1.0"]
+        Property { name: "document"; type: "QTextDocument"; isPointer: true }
+        Signal {
+            name: "highlightRequested"
+            Parameter { name: "text"; type: "string" }
+        }
+        Method {
+            name: "setFormat"
+            Parameter { name: "start"; type: "int" }
+            Parameter { name: "count"; type: "int" }
+            Parameter { name: "color"; type: "QColor" }
+        }
+    }
+    Component {
         name: "DeclarativeTabStops"
         prototype: "QObject"
         exports: ["TabStops 1.0"]
-
         Property { name: "tabStops"; type: "QVariantList" }
     }
     Component {
@@ -2631,7 +2639,6 @@ Module {
         prototype: "QAbstractItemView"
         exports: ["HeaderView 1.0"]
         isCreatable: false
-
         Enum {
             name: "ResizeMode"
             values: {
@@ -2998,7 +3005,6 @@ Module {
         prototype: "QObject"
         exports: ["Layout 1.0"]
         isCreatable: false
-
         Enum {
             name: "SizeConstraint"
             values: {
@@ -3896,6 +3902,15 @@ Module {
         Property { name: "stringList"; revision: 256; type: "QStringList" }
     }
     Component {
+        name: "QSyntaxHighlighter"
+        prototype: "QObject"
+        Method { name: "rehighlight" }
+        Method {
+            name: "rehighlightBlock"
+            Parameter { name: "block"; type: "QTextBlock" }
+        }
+    }
+    Component {
         name: "QTabWidget"
         prototype: "QWidget"
         Enum {
@@ -4330,7 +4345,6 @@ Module {
         name: "QTimer"
         prototype: "QObject"
         exports: ["Timer 1.0"]
-
         Property { name: "singleShot"; type: "bool" }
         Property { name: "interval"; type: "int" }
         Property { name: "remainingTime"; type: "int"; isReadonly: true }
