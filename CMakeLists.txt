@@ -16,6 +16,7 @@ option(USE_QT6 "Use Qt6" OFF)
 option(BUILD_EXAMPLES "Build the examples" ON)
 option(ENABLE_SANITIZERS "Enable asan/ubsan sanitizers" OFF)
 option(BUILD_SHARED_LIBS "Build shared library instead of static" ON)
+option(LINK_TO_WEBENGINE_WIDGETS "Use WebEngineWidgets if found" ON)
 
 if(USE_QT6)
   find_package(Qt6 6.5 NO_MODULE REQUIRED COMPONENTS Qml Widgets QuickWidgets)

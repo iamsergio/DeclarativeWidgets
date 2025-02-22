@@ -64,7 +64,7 @@ target_link_libraries(
           Qt${QTMAJOR}::Widgets Qt${QTMAJOR}::WidgetsPrivate
           Qt${QTMAJOR}::QuickWidgets)
 
-if(Qt${QTMAJOR}WebEngineWidgets_FOUND)
+if(Qt${QTMAJOR}WebEngineWidgets_FOUND AND LINK_TO_WEBENGINE_WIDGETS)
   target_link_libraries(${TARGET} PRIVATE Qt${QTMAJOR}::WebEngineWidgets)
 endif()
 

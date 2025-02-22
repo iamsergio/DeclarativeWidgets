@@ -80,6 +80,13 @@
       "cacheVariables": {
         "BUILD_SHARED_LIBS": "OFF"
       }
+    },
+    {
+      "name": "rel-no-webengine6",
+      "inherits": "rel6",
+      "cacheVariables": {
+        "LINK_TO_WEBENGINE_WIDGETS": "OFF"
+      }
     }
   ]
 }
